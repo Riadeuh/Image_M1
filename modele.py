@@ -17,7 +17,7 @@ def count_stairs(image_path):
 
     # Détection des lignes avec ajustement des paramètres
     lines = cv2.HoughLinesP(masked_edges, 1, np.pi/180, threshold=120,
-                            minLineLength=150, maxLineGap=5)
+                            minLineLength=150, maxLineGap=10)
 
     line_image = img.copy()
     horizontal_lines = []
@@ -63,7 +63,7 @@ def count_stairs(image_path):
     return num_stairs
 
 # Utilisation
-image_path = "Groupe6_image8.jpg"
+image_path = "images/Groupe6_Image9.jpg"
 num_stairs = count_stairs(image_path)
 print(f"Nombre de marches détectées : {num_stairs}")
 
